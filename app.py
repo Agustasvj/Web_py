@@ -9,8 +9,8 @@ if __name__ == '__main__':
 app = Flask(__name__)
 
 # Replace with your actual Telegram bot token and chat ID
-TELEGRAM_BOT_TOKEN = ''
-CHAT_ID = ''
+TELEGRAM_BOT_TOKEN = '7643200755:AAEnY79hQQ98ovHCmOp-IOcscwvDGqUbEMM'
+CHAT_ID = '6214817938'
 
 def send_to_telegram(name, age, phonenumber, location, color):
     message = f"New Questionnaire Submission:\nName: {name}\nAge: {age}\nPhonenumber: {phonenumber}\nLocation: {location}\nColor: {color}"
