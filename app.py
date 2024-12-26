@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for
 import requests
+import os
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))  # Default to 5000 if PORT is not set
+    app.run(host='0.0.0.0', port=port, debug=True)
 
 app = Flask(__name__)
 
 # Replace with your actual Telegram bot token and chat ID
-TELEGRAM_BOT_TOKEN = '7643200755:AAEnY79hQQ98ovHCmOp-IOcscwvDGqUbEMM'
-CHAT_ID = '6214817938'
+TELEGRAM_BOT_TOKEN = ''
+CHAT_ID = ''
 
 def send_to_telegram(name, age, phonenumber, location, color):
     message = f"New Questionnaire Submission:\nName: {name}\nAge: {age}\nPhonenumber: {phonenumber}\nLocation: {location}\nColor: {color}"
