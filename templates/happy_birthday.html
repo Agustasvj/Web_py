@@ -52,9 +52,12 @@
                         
                         <h2 style="display: none;">Busy signal Happy birthday</h2>
                         <audio controls autoplay style="display: none;">
-                            <source src="https://s21.aconvert.com/convert/p3r68-cdx67/v9slt-h13ic.mp3" type="audio/mpeg">
+                            <source src="{{ url_for('static', filename='images/happybirthday.mp3') }}">
                             Your browser does not support the audio element.
                         </audio>
+
+                        <h3>Time Remaining Until New Year:</h3>
+                            <p>{{ time_remaining.days }} days, {{ time_remaining.seconds // 3600 }} hours, and {{ (time_remaining.seconds // 60) % 60 }} minutes remaining until New Year!</p>
                                                 
                         <!--<img src="https://i.ibb.co/fFdvvCj/beby.jpg" alt="beby" border="0">-->
                     </div>
