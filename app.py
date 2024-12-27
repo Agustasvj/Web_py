@@ -1,10 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import requests
 import os
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Default to 5000 if PORT is not set
-    app.run(host='0.0.0.0', port=port, debug=True)
+from datetime import datetime  # Import datetime for time calculations
 
 app = Flask(__name__)
 
@@ -38,7 +35,7 @@ def questionnaire():
         location = request.form.get('location')
         color = request.form.get('color')
         
-        print(f"Received data: Name: {name}, Age: {age}, Feedback: {phonenumber}, Location: {location}, Color: {color}")  # Debugging line
+        print(f"Received data: Name: {name}, Age: {age}, Phonenumber: {phonenumber}, Location: {location}, Color: {color}")  # Debugging line
         
         # Send data to Telegram
         send_to_telegram(name, age, phonenumber, location, color)
@@ -53,6 +50,14 @@ def thank_you():
     name = request.args.get('name', '')
     color = request.args.get('color', '')
     age = request.args.get('age', '')
-    return render_template('happy_birthday.html', name=name, color=color, age=age)
+
+    # Calculate time remaining until New Year
+    now = datetime.now()
+    new_year = datetime(now.year + 1, 1, 1)  # Next New Year
+    time_remaining = new_year - now
+
+    return render_template('happy_birthday.html', name=name, color=color, age=age, time_remaining=time_remaining)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Default to 5000 if PORT is not set
+    app.run(host='0.0.0.0', port=port, debug=True)
