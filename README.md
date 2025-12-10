@@ -1,25 +1,56 @@
-<div style="background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); padding:20px; border-radius:15px; text-align:center; font-family:Arial, sans-serif; color:white; min-height:100vh; margin:0; display:flex; flex-direction:column; justify-content:center;">
+<!-- ===== HTML-in-Markdown (styled + clickable) ===== -->
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; color:#1f2937; line-height:1.2;">
 
-  <h1 style="font-size:42px; font-weight:bold; color:#00ffcc; margin:10px; text-shadow: 0 0 15px #00ffcc;">
-    🎄 Happy holidays! 🎄
-  </h1>
+  <p style="font-size:12px; color:#6b7280; margin:0;">Powered by</p>
 
-  <p style="font-size:14px; color:#aaaaaa; margin:15px 0;">
-    Powered by
-  </p>
+  <h1 style="font-size:48px; margin:6px 0 12px 0; color:#0b61ff; letter-spacing:1px;">SIERRA. VJ</h1>
 
-  <h2 style="font-size:50px; font-weight:900; background:-webkit-linear-gradient(#ff00cc, #00ffcc); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin:10px; letter-spacing:3px;">
-    SIERRA. VJ
-  </h2>
+  <hr style="border:none; height:1px; background:#e6edf8; margin:10px 0 18px 0;" />
 
-  <div style="margin:25px 0; font-size:18px;">
-    <p style="margin:10px;"><a href="https://wa.me/1234567890" style="color:#25D366; text-decoration:none; font-weight:bold;">WhatsApp Chat</a></p>
-    <p style="margin:10px;"><a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXXX" style="color:#25D366; text-decoration:none; font-weight:bold;">WhatsApp Group</a></p>
-    <p style="margin:10px;"><a href="https://t.me/YourUsername" style="color:#0088cc; text-decoration:none; font-weight:bold;">Telegram Personal</a></p>
-    <p style="margin:10px;"><a href="https://t.me/YourChannel" style="color:#0088cc; text-decoration:none; font-weight:bold;">Telegram Channel/Group</a></p>
+  <!-- Links as buttons (clickable) -->
+  <div style="display:flex; gap:10px; flex-wrap:wrap;">
+
+    <!-- WhatsApp chat (direct message) -->
+    <a href="https://wa.me/447700900000?text=Hello%20Sierra!" 
+       style="display:inline-block; padding:10px 14px; text-decoration:none; border-radius:8px; background:#25D366; color:#fff; font-weight:600;">
+      WhatsApp Chat
+    </a>
+
+    <!-- WhatsApp Group (invite link) -->
+    <a href="https://chat.whatsapp.com/ABCDEFGHijklMNOPqrst" 
+       style="display:inline-block; padding:10px 14px; text-decoration:none; border-radius:8px; background:#075E54; color:#fff; font-weight:600;">
+      WhatsApp Group
+    </a>
+
+    <!-- Telegram -->
+    <a href="https://t.me/YourTelegramLink" 
+       style="display:inline-block; padding:10px 14px; text-decoration:none; border-radius:8px; background:#0088cc; color:#fff; font-weight:600;">
+      Telegram
+    </a>
+
   </div>
 
-  <footer style="margin-top:40px; font-size:14px; color:#666;">
-    © 2025 SIERRA. VJ • All Rights Reserved
+  <p style="margin:18px 0 6px 0; font-size:16px;">Happy holidays 🎉 — ¡Felices fiestas! (that’s “happy holidays” in Spanish)</p>
+
+  <footer style="font-size:12px; color:#9ca3af; margin-top:10px;">
+    © 2025
   </footer>
 </div>
+
+<!-- ===== Pure Markdown fallback (less styling, still clickable) =====
+
+Powered by (small)
+
+# SIERRA. VJ
+
+---
+**Links**
+- [WhatsApp Chat](https://wa.me/447700900000?text=Hello%20Sierra!)
+- [WhatsApp Group](https://chat.whatsapp.com/ABCDEFGHijklMNOPqrst)
+- [Telegram](https://t.me/YourTelegramLink)
+
+**Happy holidays 🎉**
+
+© 2025
+
+-->
