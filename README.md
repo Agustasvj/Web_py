@@ -30,22 +30,3 @@
   <footer style="font-size:12px; color:#9ca3af; margin-top:10px;">
     © 2025
   <
-
-
-<!-- ===== Pure Markdown fallback (less styling, still clickable) =====
-
-Powered by (small)
-
-# SIERRA. VJ
-
----
-**Links**
-- [WhatsApp Chat](https://wa.me/447700900000?text=Hello%20Sierra!)
-- [WhatsApp Group](https://chat.whatsapp.com/ABCDEFGHijklMNOPqrst)
-- [Telegram](https://t.me/YourTelegramLink)
-
-**Happy holidays 🎉**
-
-© 2025
-
--->
