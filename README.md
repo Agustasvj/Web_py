@@ -13,13 +13,12 @@
   </h2>
 
   <div style="margin:25px 0; font-size:18px;">
-    <p style="margin:10px;"><a href="https://wa.me/1234567890" style="color:#25D366; text-decoration:none; font-weight:bold;">WhatsApp Chat</a></p>
-    <p style="margin:10px;"><a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXXX" style="color:#25D366; text-decoration:none; font-weight:bold;">WhatsApp Group</a></p>
-    <p style="margin:10px;"><a href="https://t.me/YourUsername" style="color:#0088cc; text-decoration:none; font-weight:bold;">Telegram Personal</a></p>
-    <p style="margin:10px;"><a href="https://t.me/YourChannel" style="color:#0088cc; text-decoration:none; font-weight:bold;">Telegram Channel/Group</a></p>
+    <p style="margin:10px;"><a href="https://wa.me/+254790438394" style="color:#25D366; text-decoration:none; font-weight:bold;">WhatsApp Chat</a></p>
+    <p style="margin:10px;"><a href="https://chat.whatsapp.com/JZxR4t6JcMv66OEiRRCB2P?mode=hqrt1" style="color:#25D366; text-decoration:none; font-weight:bold;">WhatsApp Group</a></p>
+    <p style="margin:10px;"><a href="https://t.me/svjeff" style="color:#0088cc; text-decoration:none; font-weight:bold;">Telegram Personal</a></p>
   </div>
 
-  <footer style="margin-top:40px; font-size:14px; color:#666;">
+  <footer style="margin-top:40px; font-size:14px; color:#00FFFF;">
     © 2025 SIERRA. VJ • All Rights Reserved
   </footer>
 </div>
