@@ -1,19 +1,25 @@
-<div style="background-color:#121212; padding:15px; border-radius:10px; text-align:center; border: 2px solid #00ff00;">
+<div style="background: cyan; padding:20px; border-radius:15px; text-align:center; font-family:Arial, sans-serif; color:white; min-height:100vh; margin:0; display:flex; flex-direction:column; justify-content:center;">
 
-<font color="#bbbbbb" size="2" face="monospace">Powered by</font><br>
+  <h1 style="font-size:42px; font-weight:bold; color:#00ffcc; margin:10px; text-shadow: 0 0 15px #00ffcc;">
+    🎄 Happy holidays! 🎄
+  </h1>
 
-<font color="#00ff00" size="6" face="sans-serif"><b>SIERRA. VJ</b></font><br><br>
+  <p style="font-size:14px; color:#aaaaaa; margin:15px 0;">
+    Powered by
+  </p>
 
-<a href="https://wa.me/254700000000">
-<font color="#25D366" size="4"><b>WhatsApp Chat</b></font></a><br>
+  <h2 style="font-size:50px; font-weight:900; background:-webkit-linear-gradient(#ff00cc, #00ffcc); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin:10px; letter-spacing:3px;">
+    SIERRA. VJ
+  </h2>
 
-<a href="https://chat.whatsapp.com/YOUR_GROUP_LINK">
-<font color="#25D366" size="4"><b>WhatsApp Group</b></font></a><br>
+  <div style="margin:25px 0; font-size:18px;">
+    <p style="margin:10px;"><a href="https://wa.me/1234567890" style="color:#25D366; text-decoration:none; font-weight:bold;">WhatsApp Chat</a></p>
+    <p style="margin:10px;"><a href="https://chat.whatsapp.com/XXXXXXXXXXXXXXXXXX" style="color:#25D366; text-decoration:none; font-weight:bold;">WhatsApp Group</a></p>
+    <p style="margin:10px;"><a href="https://t.me/YourUsername" style="color:#0088cc; text-decoration:none; font-weight:bold;">Telegram Personal</a></p>
+    <p style="margin:10px;"><a href="https://t.me/YourChannel" style="color:#0088cc; text-decoration:none; font-weight:bold;">Telegram Channel/Group</a></p>
+  </div>
 
-<a href="https://t.me/YOUR_TELEGRAM_LINK">
-<font color="#0088cc" size="4"><b>Telegram Channel</b></font></a><br><br>
-
-<font color="#ffcc00" size="5" face="cursive">✨ Happy Holidays! ✨</font><br><br>
-
-<font color="#555555" size="2">© 2025</font>
+  <footer style="margin-top:40px; font-size:14px; color:#666;">
+    © 2025 SIERRA. VJ • All Rights Reserved
+  </footer>
 </div>
